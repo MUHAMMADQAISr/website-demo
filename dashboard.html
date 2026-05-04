@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+  <h2>Saved User Data</h2>
+
+  <p><strong>Username:</strong> <span id="user"></span></p>
+  <p><strong>Password:</strong> <span id="pass"></span></p>
+
+  <script>
+    document.getElementById("user").textContent = localStorage.getItem("username");
+    document.getElementById("pass").textContent = localStorage.getItem("password");
+  </script>
+
+</body>
+</html>
