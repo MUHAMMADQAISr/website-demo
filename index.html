@@ -1,37 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Login Page</title>
+<meta charset="UTF-8">
+<title>Horror Hacker Theme</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: black;
+        color: red;
+        font-family: "Courier New", monospace;
+        overflow: hidden;
+    }
+
+    /* Background scrolling text */
+    .background {
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        color: rgba(255, 0, 0, 0.08);
+        font-size: 40px;
+        transform: rotate(-30deg);
+        white-space: nowrap;
+        animation: moveBg 20s linear infinite;
+    }
+
+    @keyframes moveBg {
+        0% { transform: translate(-50%, -50%) rotate(-30deg); }
+        100% { transform: translate(0%, 0%) rotate(-30deg); }
+    }
+
+    /* Main message */
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 60px;
+        text-shadow: 0 0 10px red, 0 0 20px darkred;
+        animation: flicker 1.5s infinite;
+    }
+
+    @keyframes flicker {
+        0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+            opacity: 1;
+        }
+        20%, 24%, 55% {
+            opacity: 0.3;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        color: white;
+        margin-top: 20px;
+        opacity: 0.7;
+    }
+</style>
 </head>
 <body>
 
-  <h2>Login</h2>
+<div class="background">
+    HACKER HACKER HACKER HACKER HACKER HACKER HACKER HACKER
+    HACKER HACKER HACKER HACKER HACKER HACKER HACKER HACKER
+</div>
 
-  <form id="loginForm">
-    <label>Username:</label><br>
-    <input type="text" id="username" required><br><br>
-
-    <label>Password:</label><br>
-    <input type="password" id="password" required><br><br>
-
-    <button type="submit">Submit</button>
-  </form>
-
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      let username = document.getElementById("username").value;
-      let password = document.getElementById("password").value;
-
-      // Save data in browser
-      localStorage.setItem("username", username);
-      localStorage.setItem("password", password);
-
-      // Redirect to another page
-      window.location.href = "dashboard.html";
-    });
-  </script>
+<div class="center">
+    <h1>YOU ARE HACKED</h1>
+    <p>This is a horror-themed demo page 👻</p>
+</div>
 
 </body>
 </html>
